@@ -27,7 +27,7 @@ void enrollment::input()
 	for(int i=1;i<length;i++)
 	{
 		cin>>rollnumbers[i];
-		for(int j=0;j<i;j++)
+		for(int j=0;j<i;j++)  //loop to check if the entered input is already present
 		{
 			if(rollnumbers[i]==rollnumbers[j])
 			{
@@ -48,7 +48,7 @@ void enrollment::print()const
 		cout<<rollnumbers[i]<<" ";
 	}
 }
-void enrollment::generateAttendanceSheet()
+void enrollment::generateAttendanceSheet()    //ascendning order
 {
 	int temp;
 	for(int i=0;i<length-1;i++)
@@ -67,7 +67,7 @@ void enrollment::insertinOrder(int rollnumber)
 	{
 		cout<<"\tYou don't have any space"<<endl;
 	}
-	else if(Exist(rollnumber)==true)
+	else if(Exist(rollnumber)==true)   //checking the existence of roll number 
 	{
 		cout<<"\tRoll Number is Already Present"<<endl;
 	}
@@ -78,7 +78,7 @@ void enrollment::insertinOrder(int rollnumber)
 		generateAttendanceSheet();
 	}
 }
-bool enrollment:: Exist(int rollnumber)
+bool enrollment:: Exist(int rollnumber)     //function to check the prersence of a roll number
 {
 	for(int i=0;i<length;i++)
 	{
@@ -89,7 +89,7 @@ bool enrollment:: Exist(int rollnumber)
 	}
 	return false;
 }
-void enrollment:: testcopyconstructor(enrollment obj)
+void enrollment:: testcopyconstructor(enrollment obj)    //copying elements of one obj into another by adding 1
 {
 	for(int i=0;i<length;i++)
 	{
